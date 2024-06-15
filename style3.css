@@ -1,0 +1,53 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #17181d;
+    color: #fcd9b8c2;
+    font-family: "Chakra Petch", sans-serif;
+    ;
+}
+
+.dnt{
+    margin: 20px;
+}
+
+.main{
+    border-radius: 10px;
+    padding: 20px;
+    margin: auto;
+    text-align: center;
+    height:auto;
+    width:90%;
+    color: white;
+    /* border: 2px solid white; */
+    /* box-shadow: 0 0 10px; */
+}
+
+.question{
+    font-weight: bold;
+    font-size: 50px;
+    margin-bottom: 20px;
+    color: white;
+
+}
+
+.ans{
+    font-size: 30px;
+}
+
+.Q1{
+    padding: 30px;
+}
+
+.Q1:hover{
+    color: white;
+    cursor: pointer;
+    font-size: 30.2px;
+
+}
+
+.Q1:active{
+    color: green;
+
+}

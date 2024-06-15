@@ -142,14 +142,15 @@
 }
 
 button {
-    width: 120px;
-    height: 120px;
-    border-radius: 50%;
+    width: 200px;
+    height: 60px;
+    border-radius: 50px;
     font-size: 25px;
     font-weight: bold;
     background: none;
     border: 0px;
     margin-top: 5%;
+    cursor: pointer;
   }
 
 
@@ -160,7 +161,6 @@ button:hover {
 
 button:active {
     font-size: 23px;
-
     border: 3px solid green;
     color: white;
     transition: 0.05s;
