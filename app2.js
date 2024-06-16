@@ -20,4 +20,6 @@ setInterval(updateTime, 1000);
 
 localStorage.getItem("First Name");
 var name1 = document.getElementById("firstName");
+var name2 = document.getElementById("lastName");
 name1.innerHTML =" " + localStorage.getItem("First Name");
+name2.innerHTML =" " + localStorage.getItem("Second Name");

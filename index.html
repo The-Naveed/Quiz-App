@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
@@ -9,6 +10,7 @@
     <link rel="stylesheet" href="style.css">
     <title>Welcome To Quiz Application</title>
 </head>
+
 <body>
     <div class="dnt">
         <span>Date: </span><span class="date" id="date"></span><br>
@@ -21,10 +23,22 @@
         </div>
         <div class="container2">
             <div>
-                <input type="text" name="" id="firstName" placeholder="Enter Your First Name"></br>
-                <input type="text" name="" id="lastName" placeholder="Enter Your Last Name"></br>
-                <input type="email" name="" id="" placeholder="Enter Your Email Address"></br>
-                <input type="number" name="" id="" placeholder="Enter Your Phone Number"></br>
+                <div>
+                    <p id="error1">First Name Not Found *</p>
+                    <input type="text" name="" id="firstName" placeholder="Enter Your First Name"></br>
+                </div>
+                <div>
+                    <p id="error2">Last Name Not Found *</p>
+                    <input type="text" name="" id="lastName" placeholder="Enter Your Last Name"></br>
+                </div>
+                <div>
+                    <p id="error3">Email Not Found *</p>
+                    <input type="email" name="" id="email" placeholder="Enter Your Email Address"></br>
+                </div>
+                <div>
+                    <p id="error4">Phone Number Not Found *</p>
+                    <input type="number" name="" id="num" placeholder="Enter Your Phone Number"></br>
+                </div>
             </div>
         </div>
     </div>
@@ -36,4 +50,5 @@
 </body>
 <script src="app.js"></script>
 <script> </script>
+
 </html>

@@ -25,27 +25,41 @@ var getEmail = document.getElementById("email");
 var getNum = document.getElementById("num");
 var getLink = document.getElementById("link");
 
-console.log(getLastName)
+var error1 = document.getElementById("error1")
+var error2 = document.getElementById("error2")
+var error3 = document.getElementById("error3")
+var error4 = document.getElementById("error4")
 
 function save() {
 
     if (!getFirstName.value) {
-        alert("First Name Is Missing");
+        error1.style.display = "block";
         return
     }
 
     if (!getLastName.value) {
-        alert("Last Name Is Missing");
+        error2.style.display = "block";
         return
     }
 
-    if ((getLastName = true) || (getLastName = true)) {
-        getLink.href = "index2.html"
+    if (!getEmail.value) {
+        error3.style.display = "block";
+        return
     }
 
-    localStorage.setItem("First Name", getFirstName.value);
-    localStorage.setItem("Last Name", getLastName.value);
+    if (!getNum.value) {
+        error4.style.display = "block";
+        return
+    }
+
+    link.href = "index2.html"
+
+    saveValue()
 }
 
-console.log()
-
+function saveValue() {
+    localStorage.setItem("First Name", getFirstName.value);
+    localStorage.setItem("Second Name", getLastName.value);
+    localStorage.setItem("E Mail", getEmail.value);
+    localStorage.setItem("Number", getNum.value);
+}
