@@ -20,8 +20,9 @@
     height:auto;
     width:90%;
     color: white;
-    /* border: 2px solid white; */
-    /* box-shadow: 0 0 10px; */
+    border: 2px solid white;
+    box-shadow:  10px;
+    margin-bottom: 20px;
 }
 
 .question{
@@ -41,15 +42,19 @@
 }
 
 .Q1:hover{
+    border: 1px solid white;
     color: white;
     cursor: pointer;
-    font-weight: bold;
+    height: auto;
+    width: auto;
+    border-radius: 5px;
+    /* font-weight: bold; */
     /* font-size: 30.2px; */
 
 }
 
 .Q1:active{
-    color: green;
+    background-color: green;
 
 }
 

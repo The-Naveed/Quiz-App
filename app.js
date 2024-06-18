@@ -37,14 +37,26 @@ function save() {
         return
     }
 
+    if (getFirstName.value === getFirstName.value) {
+        error1.style.display = "none";
+    }
+
     if (!getLastName.value) {
         error2.style.display = "block";
         return
     }
 
+    if (getLastName.value === getLastName.value) {
+        error2.style.display = "none";
+    }
+
     if (!getEmail.value) {
         error3.style.display = "block";
         return
+    }
+
+    if (getEmail.value === getEmail.value) {
+        error3.style.display = "none";
     }
 
     if (!getNum.value) {
