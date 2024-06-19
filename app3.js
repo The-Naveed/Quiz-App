@@ -14,7 +14,16 @@ const timerInterval = setInterval(updateTimer, 1000);
 
 var m = 1;
 var correct = 0;
-var wrong  = 0;
+var inCorrect = 0;
+
+
+var countOne = document.getElementById("count1");
+var countTwo = document.getElementById("count2");
+var count = document.getElementById("count");
+
+var image = document.getElementById("image");
+var btn = document.getElementById("btn");
+countTwo.innerHTML = 10
 
 var questions = {
 
@@ -129,10 +138,9 @@ var questions = {
     },
 }
 
-
-console.log(questions.M)
-
-
+var finish = {
+    head: "Finish"
+}
 
 var getQues = document.getElementById("ques");
 var a = document.getElementById("a");
@@ -146,6 +154,9 @@ b.innerHTML = questions.q1.options.b
 c.innerHTML = questions.q1.options.c
 d.innerHTML = questions.q1.options.d
 
+countOne.innerHTML = 1
+
+countOne.innerHTML = m
 
 function next() {
 
@@ -157,6 +168,8 @@ function next() {
         b.innerHTML = questions.q2.options.b
         c.innerHTML = questions.q2.options.c
         d.innerHTML = questions.q2.options.d
+        countOne.innerHTML = m
+
     }
 
     if (m == 3) {
@@ -166,6 +179,7 @@ function next() {
         b.innerHTML = questions.q3.options.b
         c.innerHTML = questions.q3.options.c
         d.innerHTML = questions.q3.options.d
+        countOne.innerHTML = m
 
     }
 
@@ -176,6 +190,7 @@ function next() {
         b.innerHTML = questions.q4.options.b
         c.innerHTML = questions.q4.options.c
         d.innerHTML = questions.q4.options.d
+        countOne.innerHTML = m
 
     }
 
@@ -186,6 +201,7 @@ function next() {
         b.innerHTML = questions.q5.options.b
         c.innerHTML = questions.q5.options.c
         d.innerHTML = questions.q5.options.d
+        countOne.innerHTML = m
 
     }
 
@@ -196,6 +212,7 @@ function next() {
         b.innerHTML = questions.q6.options.b
         c.innerHTML = questions.q6.options.c
         d.innerHTML = questions.q6.options.d
+        countOne.innerHTML = m
 
     }
 
@@ -206,6 +223,7 @@ function next() {
         b.innerHTML = questions.q7.options.b
         c.innerHTML = questions.q7.options.c
         d.innerHTML = questions.q7.options.d
+        countOne.innerHTML = m
 
     }
 
@@ -216,6 +234,7 @@ function next() {
         b.innerHTML = questions.q8.options.b
         c.innerHTML = questions.q8.options.c
         d.innerHTML = questions.q8.options.d
+        countOne.innerHTML = m
 
     }
 
@@ -226,6 +245,7 @@ function next() {
         b.innerHTML = questions.q9.options.b
         c.innerHTML = questions.q9.options.c
         d.innerHTML = questions.q9.options.d
+        countOne.innerHTML = m
 
     }
 
@@ -236,7 +256,87 @@ function next() {
         b.innerHTML = questions.q10.options.b
         c.innerHTML = questions.q10.options.c
         d.innerHTML = questions.q10.options.d
+        countOne.innerHTML = m
+    }
 
+    if (m == 11) {
+        countOne.innerHTML = ""
+        countTwo.innerHTML = ""
+        count.innerHTML = ""
+        getQues.innerHTML = "Result"
+        a.innerHTML = "Total Questions = 10"
+        b.innerHTML = "Correct Answers = " + (correct)
+        c.innerHTML = "Wrong Answers = " + (10 - correct)
+        d.innerHTML = "Percentage = " + (correct / 10) * 100 + "%"
+
+        if (correct >= 7) {
+            image.style.display = "block"
+            btn.innerHTML = "Go Home"
+
+
+        } else {
+            image.style.display = "none"
+        }
+
+        if (correct <= 6) {
+            image.style.display = "block"
+            image.src = "./Media/fail-stamp-1-300x259.png"
+            btn.innerHTML = "Try Again"
+            btn.setAttribute("href")
+            btn.href = "index.html"
+
+
+        } else {
+            image.style.display = "none"
+
+        }
     }
 
 }
+
+function getAll(ele) {
+    if (ele.innerHTML === questions.q1.ans) {
+        correct++
+    }
+
+    if (ele.innerHTML == questions.q2.ans) {
+        correct++
+    }
+
+    if (ele.innerHTML == questions.q3.ans) {
+        correct++
+    }
+
+    if (ele.innerHTML == questions.q4.ans) {
+        correct++
+    }
+
+    if (ele.innerHTML == questions.q5.ans) {
+        correct++
+    }
+
+    if (ele.innerHTML == questions.q6.ans) {
+        correct++
+    }
+
+    if (ele.innerHTML == questions.q7.ans) {
+        correct++
+    }
+
+    if (ele.innerHTML == questions.q8.ans) {
+        correct++
+    }
+
+    if (ele.innerHTML == questions.q9.ans) {
+        correct++
+    }
+
+    if (ele.innerHTML == questions.q10.ans) {
+        correct++
+    }
+
+    console.log(correct);
+    console.log(inCorrect);
+}
+console.log(correct);
+console.log(inCorrect);

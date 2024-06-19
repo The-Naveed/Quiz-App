@@ -16,17 +16,23 @@
         <span>Time Remaining: <span id="timer">1:00</span></span>
     </div>
     <div class="main">
+        <div class="count" id="count" align="left"><span id="count1"></span> Out Of <span id="count2"></span></div>
         <div class="question" id="ques">kdjwbvejbvibe</div>
+
         <div class="ans">
-            <div class="Q1" id="a">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
-            <div class="Q1" id="b">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
-            <div class="Q1" id="c">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
-            <div class="Q1" id="d">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+            <div align="center"><img id="image" src="./Media/winner.gif"></div>
+            <div onclick="getAll(this)" class="Q1" id="a">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+            <div onclick="getAll(this)" class="Q1" id="b">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+            <div onclick="getAll(this)" class="Q1" id="c">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+            <div onclick="getAll(this)" class="Q1" id="d">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
         </div>
         <br>
         <br>
         <div>
-            <button onclick="next()">Next</button>
+            <a href="#" id="goto">
+                <button onclick="next()">Next</button>
+            </a>
+
         </div>
     </div>
 
