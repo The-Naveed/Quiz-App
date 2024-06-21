@@ -29,7 +29,7 @@
     color: white;
     border: 2px solid white;
     box-shadow:  10px;
-    margin-bottom: 20px;
+    margin-bottom: 0px;
 }
 
 .question{
@@ -61,11 +61,6 @@
 
 }
 
-.Q1:active{
-    background-color: green;
-
-}
-
 button {
     width: 200px;
     height: 60px;
@@ -75,6 +70,7 @@ button {
     background: none;
     border: 0px;
     margin-bottom: 2px;
+    text-decoration: none;
   }
 
 

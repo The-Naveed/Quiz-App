@@ -12,7 +12,7 @@ function updateTimer() {
 }
 const timerInterval = setInterval(updateTimer, 1000);
 
-var m = 1;
+var m = 0;
 var correct = 0;
 var inCorrect = 0;
 
@@ -23,11 +23,14 @@ var count = document.getElementById("count");
 
 var image = document.getElementById("image");
 var btn = document.getElementById("btn");
+btn.style.margin = "auto"
+btn.style.textDecoration = "none"
+btn.style.display = "none"
 countTwo.innerHTML = 10
 
-var questions = {
+var questions = [
 
-    q1: {
+    {
         q: "What is the largest continent by land area?",
         options: {
             a: "Asia",
@@ -38,7 +41,7 @@ var questions = {
         ans: "Asia",
     },
 
-    q2: {
+    {
         q: "What is the capital city of Australia ?",
         options: {
             a: "Sydney",
@@ -49,7 +52,7 @@ var questions = {
         ans: "Canberra",
     },
 
-    q3: {
+    {
         q: "Which planet is known as the Red Planet ?",
         options: {
             a: "Mars",
@@ -60,7 +63,7 @@ var questions = {
         ans: "Mars",
     },
 
-    q4: {
+    {
         q: "What is the tallest mountain in the world ?",
         options: {
             a: "Mount Everest",
@@ -71,7 +74,7 @@ var questions = {
         ans: "Mount Everest",
     },
 
-    q5: {
+    {
         q: "What is the currency of Japan ?",
         options: {
             a: "Yen",
@@ -82,7 +85,7 @@ var questions = {
         ans: "Yen",
     },
 
-    q6: {
+    {
         q: "Which is the largest ocean on Earth?",
         options: {
             a: "Indian Ocean",
@@ -93,7 +96,7 @@ var questions = {
         ans: "Pacific Ocean",
     },
 
-    q7: {
+    {
         q: "Which of these is not a primary color in painting?",
         options: {
             a: "Red",
@@ -104,7 +107,7 @@ var questions = {
         ans: "Green",
     },
 
-    q8: {
+    {
         q: "Who developed the theory of relativity?",
         options: {
             a: "Isaac Newton",
@@ -115,7 +118,7 @@ var questions = {
         ans: "Albert Einstein",
     },
 
-    q9: {
+    {
         q: "Who painted the Mona Lisa?",
         options: {
             a: "Vincent van Gogh",
@@ -126,7 +129,7 @@ var questions = {
         ans: "Leonardo da Vinci",
     },
 
-    q10: {
+    {
         q: "Which gas do plants absorb from the atmosphere?",
         options: {
             a: "Oxygen",
@@ -136,7 +139,18 @@ var questions = {
         },
         ans: "Carbon Dioxide",
     },
-}
+
+    {
+        q: "Which gas do plants absorb from the atmosphere?",
+        options: {
+            a: "Oxygen",
+            b: "Carbon Dioxide",
+            c: "Nitrogen",
+            d: "Hydrogen",
+        },
+        ans: "Carbon Dioxide",
+    },
+]
 
 var finish = {
     head: "Finish"
@@ -148,118 +162,41 @@ var b = document.getElementById("b");
 var c = document.getElementById("c");
 var d = document.getElementById("d");
 
-getQues.innerHTML = questions.q1.q
-a.innerHTML = questions.q1.options.a
-b.innerHTML = questions.q1.options.b
-c.innerHTML = questions.q1.options.c
-d.innerHTML = questions.q1.options.d
+getQues.innerHTML = questions[m].q
+a.innerHTML = questions[m].options.a
+b.innerHTML = questions[m].options.b
+c.innerHTML = questions[m].options.c
+d.innerHTML = questions[m].options.d
 
 countOne.innerHTML = 1
 
-countOne.innerHTML = m
+console.log(m)
 
 function next() {
 
+btn.style.display = "none"
+
+
     m++
+    console.log(m)
 
-    if (m == 2) {
-        getQues.innerHTML = questions.q2.q
-        a.innerHTML = questions.q2.options.a
-        b.innerHTML = questions.q2.options.b
-        c.innerHTML = questions.q2.options.c
-        d.innerHTML = questions.q2.options.d
-        countOne.innerHTML = m
+    getQues.innerHTML = questions[m].q
+    a.innerHTML = questions[m].options.a
+    b.innerHTML = questions[m].options.b
+    c.innerHTML = questions[m].options.c
+    d.innerHTML = questions[m].options.d
+    countOne.innerHTML = m + 1
 
+    if (m >= 10) {
+        result()
     }
 
-    if (m == 3) {
 
-        getQues.innerHTML = questions.q3.q
-        a.innerHTML = questions.q3.options.a
-        b.innerHTML = questions.q3.options.b
-        c.innerHTML = questions.q3.options.c
-        d.innerHTML = questions.q3.options.d
-        countOne.innerHTML = m
+}
 
-    }
+function result() {
 
-    if (m == 4) {
-
-        getQues.innerHTML = questions.q4.q
-        a.innerHTML = questions.q4.options.a
-        b.innerHTML = questions.q4.options.b
-        c.innerHTML = questions.q4.options.c
-        d.innerHTML = questions.q4.options.d
-        countOne.innerHTML = m
-
-    }
-
-    if (m == 5) {
-
-        getQues.innerHTML = questions.q5.q
-        a.innerHTML = questions.q5.options.a
-        b.innerHTML = questions.q5.options.b
-        c.innerHTML = questions.q5.options.c
-        d.innerHTML = questions.q5.options.d
-        countOne.innerHTML = m
-
-    }
-
-    if (m == 6) {
-
-        getQues.innerHTML = questions.q6.q
-        a.innerHTML = questions.q6.options.a
-        b.innerHTML = questions.q6.options.b
-        c.innerHTML = questions.q6.options.c
-        d.innerHTML = questions.q6.options.d
-        countOne.innerHTML = m
-
-    }
-
-    if (m == 7) {
-
-        getQues.innerHTML = questions.q7.q
-        a.innerHTML = questions.q7.options.a
-        b.innerHTML = questions.q7.options.b
-        c.innerHTML = questions.q7.options.c
-        d.innerHTML = questions.q7.options.d
-        countOne.innerHTML = m
-
-    }
-
-    if (m == 8) {
-
-        getQues.innerHTML = questions.q8.q
-        a.innerHTML = questions.q8.options.a
-        b.innerHTML = questions.q8.options.b
-        c.innerHTML = questions.q8.options.c
-        d.innerHTML = questions.q8.options.d
-        countOne.innerHTML = m
-
-    }
-
-    if (m == 9) {
-
-        getQues.innerHTML = questions.q9.q
-        a.innerHTML = questions.q9.options.a
-        b.innerHTML = questions.q9.options.b
-        c.innerHTML = questions.q9.options.c
-        d.innerHTML = questions.q9.options.d
-        countOne.innerHTML = m
-
-    }
-
-    if (m == 10) {
-
-        getQues.innerHTML = questions.q10.q
-        a.innerHTML = questions.q10.options.a
-        b.innerHTML = questions.q10.options.b
-        c.innerHTML = questions.q10.options.c
-        d.innerHTML = questions.q10.options.d
-        countOne.innerHTML = m
-    }
-
-    if (m == 11) {
+    if (m >= 10) {
         countOne.innerHTML = ""
         countTwo.innerHTML = ""
         count.innerHTML = ""
@@ -270,8 +207,10 @@ function next() {
         d.innerHTML = "Percentage = " + (correct / 10) * 100 + "%"
 
         if (correct >= 7) {
-            image.style.display = "block"
-            btn.innerHTML = "Go Home"
+            image.style.display = "block";
+            btn.style.display = "none"
+
+
 
 
         } else {
@@ -281,9 +220,7 @@ function next() {
         if (correct <= 6) {
             image.style.display = "block"
             image.src = "./Media/fail-stamp-1-300x259.png"
-            btn.innerHTML = "Try Again"
-            btn.setAttribute("href")
-            btn.href = "index.html"
+            btn.style.display = "none"
 
 
         } else {
@@ -291,52 +228,33 @@ function next() {
 
         }
     }
-
 }
 
 function getAll(ele) {
-    if (ele.innerHTML === questions.q1.ans) {
+    
+    if (ele.innerHTML == questions[m].ans) {
         correct++
     }
 
-    if (ele.innerHTML == questions.q2.ans) {
-        correct++
-    }
+    // if (ele.innerHTML == questions[m].ans) {
+    //     ele.style.color = "Green"
+    // }
+    
+    // if (ele.innerHTML != questions[m].ans) {
+    //     ele.style.color = "red"
+    // }
 
-    if (ele.innerHTML == questions.q3.ans) {
-        correct++
-    }
-
-    if (ele.innerHTML == questions.q4.ans) {
-        correct++
-    }
-
-    if (ele.innerHTML == questions.q5.ans) {
-        correct++
-    }
-
-    if (ele.innerHTML == questions.q6.ans) {
-        correct++
-    }
-
-    if (ele.innerHTML == questions.q7.ans) {
-        correct++
-    }
-
-    if (ele.innerHTML == questions.q8.ans) {
-        correct++
-    }
-
-    if (ele.innerHTML == questions.q9.ans) {
-        correct++
-    }
-
-    if (ele.innerHTML == questions.q10.ans) {
-        correct++
-    }
-
-    console.log(correct);
-    console.log(inCorrect);
+    console.log(ele.innerHTML)
+    btn.style.display = "block"
 }
-console.log(correct);
-console.log(inCorrect);
+
+var bio = document.getElementById("bioData");
+
+function green(){
+    
+}
+
+// name1.innerHTML =" " + localStorage.getItem("First Name");
+// name2.innerHTML =" " + localStorage.getItem("Second Name");
+
+// bio.innerHTML = `Name:`
