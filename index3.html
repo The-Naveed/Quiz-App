@@ -13,19 +13,33 @@
 
 <body>
     <div class="dnt">
-        <span>Time Remaining: <span id="timer">1:00</span></span>
+        <span id="timer">Time Remaining: <span>1:00</span></span>
     </div>
     <div class="main">
         <div class="count" id="count" align="left"><span id="count1"></span> Out Of <span id="count2"></span></div>
         <div class="question" id="ques">kdjwbvejbvibe</div>
 
         <div class="ans">
-            <div align="center"><img id="image" src="./Media/winner.gif"></div>
-            <div id="bioData"></div>
-            <div onclick="getAll(this)" class="Q1" id="a">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
-            <div onclick="getAll(this)" class="Q1" id="b">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
-            <div onclick="getAll(this)" class="Q1" id="c">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
-            <div onclick="getAll(this)" class="Q1" id="d">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</div>
+            <div class="data" id="data">
+                <div id="left" align="left">
+                    <h4>Name :<span id="firstName"></span><span id="lastName"></span></h4>
+                    <br>
+                    <h4>E Mail :<span id="mail"></span></h4>
+                    <br>
+                    <h4>Phone :<span id="num"></span></h4>
+                </div>
+                <div>
+                    <img id="image" src="./Media/winner.gif">
+                </div>
+            </div>
+            <div onclick="getAll(this)" class="Q1" id="a">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            </div>
+            <div onclick="getAll(this)" class="Q1" id="b">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            </div>
+            <div onclick="getAll(this)" class="Q1" id="c">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            </div>
+            <div onclick="getAll(this)" class="Q1" id="d">Lorem ipsum, dolor sit amet consectetur adipisicing elit.
+            </div>
         </div>
         <br>
         <br>
@@ -36,7 +50,6 @@
 
         </div>
     </div>
-
 </body>
 <script src="app3.js"></script>
 

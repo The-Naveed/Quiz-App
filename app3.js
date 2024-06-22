@@ -15,14 +15,23 @@ const timerInterval = setInterval(updateTimer, 1000);
 var m = 0;
 var correct = 0;
 var inCorrect = 0;
-
-
 var countOne = document.getElementById("count1");
 var countTwo = document.getElementById("count2");
 var count = document.getElementById("count");
-
 var image = document.getElementById("image");
 var btn = document.getElementById("btn");
+var time = document.getElementById("timer");
+var name1 = document.getElementById("firstName");
+var name2 = document.getElementById("lastName");
+var name3 = document.getElementById("mail");
+var name4 = document.getElementById("num");
+var data = document.getElementById("data");
+var left = document.getElementById("left");
+name1.innerHTML = " " + localStorage.getItem("First Name");
+name2.innerHTML = " " + localStorage.getItem("Second Name");
+name3.innerHTML = " " + localStorage.getItem("E Mail");
+name4.innerHTML = " " + localStorage.getItem("Number");
+
 btn.style.margin = "auto"
 btn.style.textDecoration = "none"
 btn.style.display = "none"
@@ -174,8 +183,7 @@ console.log(m)
 
 function next() {
 
-btn.style.display = "none"
-
+    btn.style.display = "none"
 
     m++
     console.log(m)
@@ -190,71 +198,65 @@ btn.style.display = "none"
     if (m >= 10) {
         result()
     }
-
-
 }
 
 function result() {
+
+    if (correct >= 7) {
+        image.style.display = "block";
+        left.style.display = "block";
+    }
+
+    if (correct <= 6) {
+        image.style.display = "block";
+        image.src = "./Media/fail-stamp-1-300x259.png";
+        left.style.display = "block"
+
+    }
+
 
     if (m >= 10) {
         countOne.innerHTML = ""
         countTwo.innerHTML = ""
         count.innerHTML = ""
         getQues.innerHTML = "Result"
-        a.innerHTML = "Total Questions = 10"
-        b.innerHTML = "Correct Answers = " + (correct)
-        c.innerHTML = "Wrong Answers = " + (10 - correct)
-        d.innerHTML = "Percentage = " + (correct / 10) * 100 + "%"
-
-        if (correct >= 7) {
-            image.style.display = "block";
-            btn.style.display = "none"
-
-
-
-
-        } else {
-            image.style.display = "none"
-        }
-
-        if (correct <= 6) {
-            image.style.display = "block"
-            image.src = "./Media/fail-stamp-1-300x259.png"
-            btn.style.display = "none"
-
-
-        } else {
-            image.style.display = "none"
-
-        }
+        a.innerHTML = "Total Questions : 10"
+        b.innerHTML = "Correct Answers : " + (correct)
+        c.innerHTML = "Wrong Answers : " + (10 - correct)
+        d.innerHTML = "Percentage : " + (correct / 10) * 100 + "%"
+        a.style.border = "none"
+        b.style.border = "none"
+        c.style.border = "none"
+        d.style.border = "none"
+        time.style.display = "none"
     }
 }
 
 function getAll(ele) {
-    
+
     if (ele.innerHTML == questions[m].ans) {
         correct++
     }
 
-    // if (ele.innerHTML == questions[m].ans) {
-    //     ele.style.color = "Green"
-    // }
-    
-    // if (ele.innerHTML != questions[m].ans) {
-    //     ele.style.color = "red"
-    // }
-
-    console.log(ele.innerHTML)
-    btn.style.display = "block"
+    next()
 }
 
-var bio = document.getElementById("bioData");
+setTimeout(function() {
 
-function green(){
-    
-}
+    result()
 
-// name1.innerHTML =" " + localStorage.getItem("First Name");
-// name2.innerHTML =" " + localStorage.getItem("Second Name");
+    countOne.innerHTML = ""
+    countTwo.innerHTML = ""
+    count.innerHTML = ""
+    getQues.innerHTML = "Result"
+    a.innerHTML = "Total Questions : 10"
+    b.innerHTML = "Correct Answers : " + (correct)
+    c.innerHTML = "Wrong Answers : " + (10 - correct)
+    d.innerHTML = "Percentage : " + (correct / 10) * 100 + "%"
+    a.style.border = "none"
+    b.style.border = "none"
+    c.style.border = "none"
+    d.style.border = "none"
+    time.style.display = "none";
 
-// bio.innerHTML = `Name:`
+}, 60000);

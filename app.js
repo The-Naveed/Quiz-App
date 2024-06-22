@@ -1,3 +1,4 @@
+
 function updateTime() {
     var now = new Date();
     var hours = now.getHours();
@@ -16,6 +17,7 @@ function updateTime() {
     document.getElementById('date').innerText = timeString;
     document.getElementById('day').innerText = day;
 }
+
 setInterval(updateTime, 1000);
 
 
@@ -68,6 +70,7 @@ function save() {
 
     saveValue()
 }
+
 
 function saveValue() {
     localStorage.setItem("First Name", getFirstName.value);
